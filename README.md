@@ -1,5 +1,8 @@
 # Mockingbird
-A Twitter Bot that generates tweets based on a Markov chain. Uses Tweepy and Markovify
+A Twitter Bot that generates tweets based on a Markov chain. Uses Tweepy and Markovify.
+####This bot works but is still a WORK IN PROGRESS. 
+
+I still have to clean up the code, add a few more features, fix a few minor bugs
 
 Tweet to use the bot on Twitter (replace `@username` with the actual username of the user you want the bot to replicate):
 >@mockingbirdbot @username
