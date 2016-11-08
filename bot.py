@@ -32,7 +32,7 @@ class Generate:
 
     # generateText(sample) returns a string generated using a Markov chain
     def generateText(sample):
-        return markovify.Text(sample).make_sentence(tries = 200)
+        return markovify.Text(sample).make_sentence(tries=300)
 
 
 class Listener(tweepy.StreamListener):
@@ -62,7 +62,7 @@ class Listener(tweepy.StreamListener):
                     api.lookup_users(user_ids=[Listener.findUser(tweet)])[0].screen_name]
 
         mentions = list(filter(lambda a: a != api.me().screen_name, mentions))
-        set(mentions)
+        mentions = list(set(mentions))
 
         if len(mentions) == 0:
             return ''
