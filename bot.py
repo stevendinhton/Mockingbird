@@ -90,6 +90,7 @@ class Listener(tweepy.StreamListener):
 
 
 # set up listeners for tweets containing the bot's screen name
+api.update_status("123")
 listener = Listener()
 stream = tweepy.Stream(api.auth, listener)
 stream.filter(track=[BOT_NAME])
