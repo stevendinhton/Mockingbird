@@ -1,11 +1,5 @@
-# keys/secrets
-config.ini
-
-
-
-
-
-
+# keys/secrets and other important stuff
+.env
 
 
 # Windows image file caches

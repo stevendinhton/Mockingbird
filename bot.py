@@ -1,22 +1,24 @@
-import configparser, tweepy, markovify
+import os, configparser, tweepy, markovify
 
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-# get keys and secrets from config.ini file
-CONSUMER_KEY = config['TWITTER']['CONSUMER_KEY']
-CONSUMER_SECRET = config['TWITTER']['CONSUMER_SECRET']
-ACCESS_KEY = config['TWITTER']['ACCESS_KEY']
-ACCESS_SECRET = config['TWITTER']['ACCESS_SECRET']
 # get bot's twitter screen name (e.g. @mockingbirdbot)
-BOT_NAME = config['TWITTER']['BOT_SCREEN_NAME']
-# get number of tweets to analyze per user
-TWEETS = config['GENERATION']['TWEETS']
+BOT_NAME = config['SETTINGS']['BOT_SCREEN_NAME']
+# get number of tweets to analyze per user (e.g. 150)
+TWEETS = config['SETTINGS']['TWEETS']
+
+# get keys and secrets
+CONSUMER_KEY = os.environ['CONSUMER_KEY']
+CONSUMER_SECRET = os.environ['CONSUMER_SECRET']
+ACCESS_KEY = os.environ['ACCESS_KEY']
+ACCESS_SECRET = os.environ['ACCESS_SECRET']
 
 # connect to Twitter API
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
+
 
 class Generate:
 

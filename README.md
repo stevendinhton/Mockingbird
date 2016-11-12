@@ -17,18 +17,25 @@ pip install tweepy
 pip install markovify
 ```
 
-I have not yet set up global environment variables to handle keys/secrets. For now they are stored in a config.ini file that looks like this:
+### Accessing the Twitter API
+You will need to set these environment variables corresponding to the consumer/access keys and secrets of your Twitter App:
 
 ```
-[TWITTER]
-CONSUMER_KEY = 
-CONSUMER_SECRET = 
-ACCESS_KEY = 
-ACCESS_SECRET = 
+CONSUMER_KEY
+CONSUMER_SECRET
+ACCESS_KEY
+ACCESS_SECRET
+```
+
+
+### Settings
+
+The config.ini file looks like this:
+
+```
+[SETTINGS]
 BOT_SCREEN_NAME = @usernameofthebot
-
-[GENERATION]
-TWEETS = 50
+TWEETS = 150
 ```
 
-`TWEETS` is the number of tweets will be used to generate the Markov chain sentence
+`TWEETS` is the number of tweets will be used to generate the Markov chain sentence. `BOT_SCREEN_NAME` is the twitter screen name of the bot, such as @mockingbirdbot
